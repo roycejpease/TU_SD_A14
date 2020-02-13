@@ -32,11 +32,11 @@ def main():
     if option == 'on':
         code = str(onCodes[channel][port])
     else:
-        code = str(onCodes[channel][port])
+        code = str(offCodes[channel][port])
 
     #generate and call command to send code
     command = 'codesend ' + code + ' -l 200'
-    subprocess.call(command)
+    subprocess.call(command, shell=True)
 
 #run main and exit without fault
 if __name__ == '__main__':
